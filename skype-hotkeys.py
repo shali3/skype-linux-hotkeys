@@ -16,7 +16,9 @@ elif command == '-c':
     print skype.Invoke(" ".join(args[1:]))
 elif command == '-a':
     call_id = skype.Invoke("SEARCH ACTIVECALLS").split()[1]
-    skype.Invoke('ALTER CALL ' + call_id + ' ANSWER')
+    print skype.Invoke('ALTER CALL ' + call_id + ' ANSWER')
+    print skype.Invoke('SET CALL ' + call_id + ' STATUS ONHOLD')
+    print skype.Invoke('SET CALL ' + call_id + ' STATUS INPROGRESS')
 elif command == '-h':
     call_id = skype.Invoke("SEARCH ACTIVECALLS").split()[1]
     skype.Invoke('ALTER CALL ' + call_id + ' HANGUP')
