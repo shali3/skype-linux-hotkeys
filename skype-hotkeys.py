@@ -2,7 +2,7 @@
 import dbus
 bus = dbus.SessionBus()
 skype = bus.get_object('com.Skype.API', '/com/Skype')
-skype.Invoke('NAME Answering Server')
+skype.Invoke('NAME Answering-Server')
 skype.Invoke('PROTOCOL 6')
 import sys
 args = sys.argv[1:]
@@ -13,9 +13,9 @@ if command == '-m':
         command = "MUTE OFF"
     skype.Invoke(command)
 elif command == '-s':
-    command = "SET SILENT_MODE ON"
+    command = "SILENT_MODE ON"
     if skype.Invoke('GET SILENT_MODE') == "SILENT_MODE ON":
-        command = "SET SILENT_MODE OFF"
+        command = "SILENT_MODE OFF"
     print skype.Invoke(command)
 elif command == '-a':
     call_id = skype.Invoke("SEARCH ACTIVECALLS").split()[1]
