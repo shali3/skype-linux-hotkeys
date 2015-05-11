@@ -3,7 +3,7 @@ import dbus
 bus = dbus.SessionBus()
 skype = bus.get_object('com.Skype.API', '/com/Skype')
 skype.Invoke('NAME Answering-Server')
-skype.Invoke('PROTOCOL 6')
+skype.Invoke('PROTOCOL 8')
 import sys
 args = sys.argv[1:]
 command = args[0]
