@@ -13,9 +13,9 @@ if command == '-m':
         command = "MUTE OFF"
     skype.Invoke(command)
 elif command == '-s':
-    command = "SILENT_MODE ON"
+    command = "SET SILENT_MODE ON"
     if skype.Invoke('GET SILENT_MODE') == "SILENT_MODE ON":
-        command = "SILENT_MODE OFF"
+        command = "SET SILENT_MODE OFF"
     print skype.Invoke(command)
 elif command == '-a':
     call_id = skype.Invoke("SEARCH ACTIVECALLS").split()[1]
