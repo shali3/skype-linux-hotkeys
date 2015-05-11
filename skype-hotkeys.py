@@ -12,8 +12,8 @@ if command == '-m':
     if skype.Invoke('GET MUTE') == "MUTE ON":
         command = "MUTE OFF"
     skype.Invoke(command)
-elif command == '-k':
-    print skype.Invoke("BTN_RELEASED " + args[1])
+elif command == '-c':
+    print skype.Invoke(" ".join(args[1:]))
 elif command == '-a':
     call_id = skype.Invoke("SEARCH ACTIVECALLS").split()[1]
     skype.Invoke('ALTER CALL ' + call_id + ' ANSWER')
