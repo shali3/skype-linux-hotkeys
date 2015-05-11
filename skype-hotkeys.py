@@ -2,7 +2,7 @@
 import dbus
 bus = dbus.SessionBus()
 skype = bus.get_object('com.Skype.API', '/com/Skype')
-skype.Invoke('NAME linux-hotkeys')
+skype.Invoke('NAME Answering Server')
 skype.Invoke('PROTOCOL 6')
 import sys
 args = sys.argv[1:]
