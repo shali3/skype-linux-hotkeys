@@ -1,5 +1,6 @@
 #!/usr/bin/python2
 import dbus
+import time
 bus = dbus.SessionBus()
 skype = bus.get_object('com.Skype.API', '/com/Skype')
 skype.Invoke('NAME Answering-Server')
@@ -17,6 +18,7 @@ elif command == '-c':
 elif command == '-a':
     call_id = skype.Invoke("SEARCH ACTIVECALLS").split()[1]
     print skype.Invoke('ALTER CALL ' + call_id + ' ANSWER')
+    time.sleep( 5 )
     print skype.Invoke('SET CALL ' + call_id + ' STATUS ONHOLD')
     print skype.Invoke('SET CALL ' + call_id + ' STATUS INPROGRESS')
 elif command == '-h':
